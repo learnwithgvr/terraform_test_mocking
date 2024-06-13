@@ -1,4 +1,6 @@
-# bucket_name.tftest.hcl
+# mock_providers.tftest.hcl
+# provider mocking
+
 variables {
   bucket_name = "my-fake-bucket-name"
 }
