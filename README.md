@@ -11,8 +11,9 @@ Perform Unit and Integration tests on a terraform Infrastructure as code reposit
 ├── README.md
 ├── main.tf
 ├── provider.tf
-├── terraform.tfvars
-├── testing
+├── env_tfvars
+│   ├── dev.tfvars
+├── test_template
 │   └── aws
 │       └── data.tfmock.hcl
 └── tests
