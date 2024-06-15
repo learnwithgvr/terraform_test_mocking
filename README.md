@@ -11,8 +11,9 @@ Perform Unit and Integration tests on a terraform Infrastructure as code reposit
 ├── README.md
 ├── main.tf
 ├── provider.tf
-├── terraform.tfvars
-├── testing
+├── env_tfvars
+│   ├── dev.tfvars
+├── test_template
 │   └── aws
 │       └── data.tfmock.hcl
 └── tests
@@ -43,12 +44,12 @@ terraform plan
 #### Commands to Run the terraform test mocking
 
 ```bash
-terraform test -filter tests/mock_providers.tftest.hcl
-terraform test -filter tests/mock_resource1.tftest.hcl
-terraform test -filter tests/mock_resource2.tftest.hcl 
-terraform test -filter tests/override_test1.tftest.hcl
-terraform test -filter tests/override_test2.tftest.hcl 
-terraform test -filter tests/override_test3.tftest.hcl 
+terraform test -var-file=env_tfvars/dev.tfvars -filter tests/mock_providers.tftest.hcl
+terraform test -var-file=env_tfvars/dev.tfvars -filter tests/mock_resource1.tftest.hcl
+terraform test -var-file=env_tfvars/dev.tfvars -filter tests/mock_resource2.tftest.hcl 
+terraform test -var-file=env_tfvars/dev.tfvars -filter tests/override_test1.tftest.hcl
+terraform test -var-file=env_tfvars/dev.tfvars -filter tests/override_test2.tftest.hcl 
+terraform test -var-file=env_tfvars/dev.tfvars -filter tests/override_test3.tftest.hcl 
 ```
 
 ### Youtube video tutorial

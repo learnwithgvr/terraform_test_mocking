@@ -1,3 +1,4 @@
+# override_test3.tftest.hcl
 # placing override resources, override data in root
 # placing override resources, override data in run blocks
 # here underlying provider doesn't matter
@@ -39,17 +40,8 @@ run "override_resouce_check" {
 
 run "override_data_lookup_check" {
 
-  override_data {
-    target = data.aws_s3_bucket.selected
-
-    values = {
-      bucket = "overriden_bucket66"
-      arn = "arn:aws:s3:::overriden_bucket66"
-    }
-  }
-
   assert {
-    condition     = data.aws_s3_bucket.selected.arn == "arn:aws:s3:::overriden_bucket66"
+    condition     = data.aws_s3_bucket.selected.arn == "arn:aws:s3:::overriden_bucket2"
     error_message = "incorrect bucket ARN"
   }
 }

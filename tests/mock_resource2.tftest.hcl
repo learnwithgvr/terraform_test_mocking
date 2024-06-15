@@ -1,3 +1,4 @@
+# mock_resource2.tftest.hcl
 # usage of real provider, fake provider with tfmock.hcl file
 
 provider "aws" {}
@@ -16,7 +17,7 @@ run "use_real_provider" {
 }
 
 mock_provider "aws" {
-  source = "./testing/aws"
+  source = "./test_template/aws"
   alias = "fake"
 }
 

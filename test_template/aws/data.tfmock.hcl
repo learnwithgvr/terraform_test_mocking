@@ -1,4 +1,4 @@
-# ./testing/aws/data.tfmock.hcl
+# ./test_template/aws/data.tfmock.hcl
 
 mock_resource "aws_s3_bucket" {
   defaults = {
